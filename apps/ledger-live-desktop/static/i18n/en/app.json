@@ -3215,7 +3215,8 @@
             "title": "Amount"
           },
           "validator": {
-            "title": "Validators"
+            "title": "Validators",
+            "ledgerByFigmentTC": "Ledger by Figment T&Cs"
           },
           "endDate": {
             "title": "End Date",
