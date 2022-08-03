@@ -192,6 +192,9 @@ export const ScreenName = {
   CosmosClaimRewardsValidationError: "CosmosClaimRewardsValidationError",
   CosmosClaimRewardsValidationSuccess: "CosmosClaimRewardsValidationSuccess",
 
+  OsmosisDelegationStarted: "OsmosisDelegationStarted",
+  OsmosisDelegationValidator: "OsmosisDelegationValidator",
+
   // crypto_org
   CryptoOrgEditMemo: "CryptoOrgEditMemo",
 
@@ -396,6 +399,7 @@ export const NavigatorName = {
   CosmosDelegationFlow: "CosmosDelegationFlow",
   CosmosRedelegationFlow: "CosmosRedelegationFlow",
   CosmosUndelegationFlow: "CosmosUndelegationFlow",
+  OsmosisDelegationFlow: "OsmosisDelegationFlow",
   AlgorandClaimRewardsFlow: "AlgorandClaimRewardsFlow",
   AlgorandOptInFlow: "AlgorandOptInFlow",
   ClaimRewards: "ClaimRewards",
