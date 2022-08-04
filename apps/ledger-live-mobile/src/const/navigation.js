@@ -194,6 +194,12 @@ export const ScreenName = {
 
   OsmosisDelegationStarted: "OsmosisDelegationStarted",
   OsmosisDelegationValidator: "OsmosisDelegationValidator",
+  OsmosisDelegationValidatorSelect: "OsmosisDelegationValidatorSelect",
+  OsmosisDelegationAmount: "OsmosisDelegationAmount",
+  OsmosisDelegationSelectDevice: "OsmosisDelegationSelectDevice",
+  OsmosisDelegationConnectDevice: "OsmosisDelegationConnectDevice",
+  OsmosisDelegationValidationError: "OsmosisDelegationValidationError",
+  OsmosisDelegationValidationSuccess: "OsmosisDelegationValidationSuccess",
 
   // crypto_org
   CryptoOrgEditMemo: "CryptoOrgEditMemo",

@@ -3453,6 +3453,18 @@
       "undelegating": {
         "description": "Undelegated assets are in a timelock of 14 days, before being available."
       }
+    },
+    "delegation": {
+      "flow": {
+        "steps": {
+          "starter": {
+            "description": "Delegate your OSMO to earn rewards securely, keeping control of your assets.",
+            "steps": {
+              "1": "You will have to wait 14 days for the undelegation to complete."
+            }
+          }
+        }
+      }
     }
   },
   "cosmos": {
