@@ -208,6 +208,11 @@ export const ScreenName = {
   OsmosisUndelegationConnectDevice: "OsmosisUndelegationConnectDevice",
   OsmosisUndelegationValidationError: "OsmosisUndelegationValidationError",
   OsmosisUndelegationValidationSuccess: "OsmosisUndelegationValidationSuccess",
+  OsmosisRedelegationAmount: "OsmosisRedelegationAmount",
+  OsmosisRedelegationSelectDevice: "OsmosisRedelegationSelectDevice",
+  OsmosisRedelegationConnectDevice: "OsmosisRedelegationConnectDevice",
+  OsmosisRedelegationValidationError: "OsmosisRedelegationValidationError",
+  OsmosisRedelegationValidationSuccess: "OsmosisRedelegationValidationSuccess",
 
   // crypto_org
   CryptoOrgEditMemo: "CryptoOrgEditMemo",
