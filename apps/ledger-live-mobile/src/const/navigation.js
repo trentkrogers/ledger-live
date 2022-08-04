@@ -200,6 +200,10 @@ export const ScreenName = {
   OsmosisDelegationConnectDevice: "OsmosisDelegationConnectDevice",
   OsmosisDelegationValidationError: "OsmosisDelegationValidationError",
   OsmosisDelegationValidationSuccess: "OsmosisDelegationValidationSuccess",
+  OsmosisUndelegationAmount: "OsmosisUndelegationAmount",
+  OsmosisClaimRewardsValidator: "OsmosisClaimRewardsValidator",
+  OsmosisClaimRewardsMethod: "OsmosisClaimRewardsMethod",
+  OsmosisRedelegationValidator: "OsmosisRedelegationValidator",
 
   // crypto_org
   CryptoOrgEditMemo: "CryptoOrgEditMemo",
@@ -405,7 +409,10 @@ export const NavigatorName = {
   CosmosDelegationFlow: "CosmosDelegationFlow",
   CosmosRedelegationFlow: "CosmosRedelegationFlow",
   CosmosUndelegationFlow: "CosmosUndelegationFlow",
+  OsmosisClaimRewardsFlow: "OsmosisClaimRewardsFlow",
   OsmosisDelegationFlow: "OsmosisDelegationFlow",
+  OsmosisRedelegationFlow: "OsmosisRedelegationFlow",
+  OsmosisUndelegationFlow: "OsmosisUndelegationFlow",
   AlgorandClaimRewardsFlow: "AlgorandClaimRewardsFlow",
   AlgorandOptInFlow: "AlgorandOptInFlow",
   ClaimRewards: "ClaimRewards",
