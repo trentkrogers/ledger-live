@@ -12,7 +12,7 @@ import useBridgeTransaction from "@ledgerhq/live-common/bridge/useBridgeTransact
 
 import { accountScreenSelector } from "../../../reducers/accounts";
 
-import SelectAmount from "../shared/02-SelectAmount";
+import SelectAmount from "../../cosmos/shared/02-SelectAmount";
 import { ScreenName } from "../../../const";
 
 type RouteParams = {
