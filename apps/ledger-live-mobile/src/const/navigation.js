@@ -204,6 +204,11 @@ export const ScreenName = {
   OsmosisClaimRewardsValidator: "OsmosisClaimRewardsValidator",
   OsmosisClaimRewardsMethod: "OsmosisClaimRewardsMethod",
   OsmosisRedelegationValidator: "OsmosisRedelegationValidator",
+  OsmosisRedelegationAmount: "OsmosisRedelegationAmount",
+  OsmosisRedelegationSelectDevice: "OsmosisRedelegationSelectDevice",
+  OsmosisRedelegationConnectDevice: "OsmosisRedelegationConnectDevice",
+  OsmosisRedelegationValidationError: "OsmosisRedelegationValidationError",
+  OsmosisRedelegationValidationSuccess: "OsmosisRedelegationValidationSuccess",
 
   // crypto_org
   CryptoOrgEditMemo: "CryptoOrgEditMemo",
