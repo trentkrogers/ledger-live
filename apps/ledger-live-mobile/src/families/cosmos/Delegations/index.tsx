@@ -142,8 +142,8 @@ function Delegations({ account }: Props) {
 
   const onUndelegate = useCallback(() => {
     onNavigate({
-      route: NavigatorName.CosmosUndelegationFlow,
-      screen: ScreenName.CosmosUndelegationAmount,
+      route: NavigatorName.OsmosisUndelegationFlow,
+      screen: ScreenName.OsmosisUndelegationAmount,
       params: {
         accountId: account.id,
         delegation,
