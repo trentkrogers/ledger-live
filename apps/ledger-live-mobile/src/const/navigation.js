@@ -412,7 +412,6 @@ export const NavigatorName = {
   OsmosisClaimRewardsFlow: "OsmosisClaimRewardsFlow",
   OsmosisDelegationFlow: "OsmosisDelegationFlow",
   OsmosisRedelegationFlow: "OsmosisRedelegationFlow",
-  OsmosisUndelegationFlow: "OsmosisUndelegationFlow",
   AlgorandClaimRewardsFlow: "AlgorandClaimRewardsFlow",
   AlgorandOptInFlow: "AlgorandOptInFlow",
   ClaimRewards: "ClaimRewards",
