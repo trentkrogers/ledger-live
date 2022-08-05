@@ -218,7 +218,6 @@ export const ScreenName = {
   OsmosisRedelegationValidationError: "OsmosisRedelegationValidationError",
   OsmosisRedelegationValidationSuccess: "OsmosisRedelegationValidationSuccess",
 
-
   // crypto_org
   CryptoOrgEditMemo: "CryptoOrgEditMemo",
 
