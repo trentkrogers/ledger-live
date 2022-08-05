@@ -203,6 +203,10 @@ export const ScreenName = {
   OsmosisUndelegationAmount: "OsmosisUndelegationAmount",
   OsmosisClaimRewardsValidator: "OsmosisClaimRewardsValidator",
   OsmosisClaimRewardsMethod: "OsmosisClaimRewardsMethod",
+  OsmosisClaimRewardsSelectDevice: "OsmosisClaimRewardsSelectDevice",
+  OsmosisClaimRewardsConnectDevice: "OsmosisClaimRewardsConnectDevice",
+  OsmosisClaimRewardsValidationError: "OsmosisClaimRewardsValidationError",
+  OsmosisClaimRewardsValidationSuccess: "OsmosisClaimRewardsValidationSuccess",
   OsmosisRedelegationValidator: "OsmosisRedelegationValidator",
   OsmosisUndelegationSelectDevice: "OsmosisUndelegationSelectDevice",
   OsmosisUndelegationConnectDevice: "OsmosisUndelegationConnectDevice",
@@ -213,6 +217,7 @@ export const ScreenName = {
   OsmosisRedelegationConnectDevice: "OsmosisRedelegationConnectDevice",
   OsmosisRedelegationValidationError: "OsmosisRedelegationValidationError",
   OsmosisRedelegationValidationSuccess: "OsmosisRedelegationValidationSuccess",
+
 
   // crypto_org
   CryptoOrgEditMemo: "CryptoOrgEditMemo",
