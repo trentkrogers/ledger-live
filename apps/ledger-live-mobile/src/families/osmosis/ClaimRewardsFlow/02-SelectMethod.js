@@ -7,10 +7,8 @@ import { Trans } from "react-i18next";
 import { useSelector } from "react-redux";
 import { BigNumber } from "bignumber.js";
 
-import type {
-  CosmosValidatorItem,
-  Transaction,
-} from "@ledgerhq/live-common/families/cosmos/types";
+import type { CosmosValidatorItem } from "@ledgerhq/live-common/families/cosmos/types";
+import type { Transaction } from "@ledgerhq/live-common/families/osmosis/types";
 
 import { getAccountBridge } from "@ledgerhq/live-common/bridge/index";
 import {

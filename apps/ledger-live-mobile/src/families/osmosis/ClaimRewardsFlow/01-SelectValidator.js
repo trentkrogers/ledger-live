@@ -4,7 +4,7 @@ import React, { useCallback } from "react";
 import { View, StyleSheet, FlatList } from "react-native";
 import { useSelector } from "react-redux";
 
-import type { Transaction } from "@ledgerhq/live-common/families/cosmos/types";
+import type { Transaction } from "@ledgerhq/live-common/families/osmosis/types";
 
 import { getAccountBridge } from "@ledgerhq/live-common/bridge/index";
 import {
