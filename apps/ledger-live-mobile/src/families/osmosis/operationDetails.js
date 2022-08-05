@@ -19,12 +19,12 @@ import { urls } from "../../config/urls";
 import { discreetModeSelector, localeSelector } from "../../reducers/settings";
 
 function getURLFeesInfo(op: Operation): ?string {
-  return op.fee.gt(200000) ? urls.cosmosStakingRewards : undefined;
+  return op.fee.gt(200000) ? urls.osmosisStakingRewards : undefined;
 }
 
 function getURLWhatIsThis(op: Operation): ?string {
   return op.type !== "IN" && op.type !== "OUT"
-    ? urls.cosmosStakingRewards
+    ? urls.osmosisStakingRewards
     : undefined;
 }
 
