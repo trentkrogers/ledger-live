@@ -6,7 +6,7 @@ import SafeAreaView from "react-native-safe-area-view";
 import { Trans } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import type { Transaction } from "@ledgerhq/live-common/families/cosmos/types";
+import type { Transaction } from "@ledgerhq/live-common/families/osmosis/types";
 
 import { getAccountBridge } from "@ledgerhq/live-common/bridge/index";
 import { getMainAccount } from "@ledgerhq/live-common/account/index";
