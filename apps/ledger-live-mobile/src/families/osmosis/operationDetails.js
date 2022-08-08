@@ -258,9 +258,9 @@ function OperationDetailsExtra({ extra, type, account }: Props) {
   return (
     <>
       {ret}
-      {extra.memo && (
+      {extra.memo ? (
         <Section title={t("operationDetails.extra.memo")} value={extra.memo} />
-      )}
+      ) : null}
     </>
   );
 }
