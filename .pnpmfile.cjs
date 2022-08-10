@@ -96,6 +96,10 @@ function readPackage(pkg, context) {
       addDependencies("@cosmjs/tendermint-rpc", {
         "@cosmjs/utils": pkg.version,
       }),
+      addDependencies("@avalabs/avalanche-wallet-sdk", {
+        hdkey: "*",
+        buffer: "*",
+      }),
       /* @walletconnect/* packages */
       addDependencies("@walletconnect/iso-crypto", {
         "@walletconnect/encoding": "*",

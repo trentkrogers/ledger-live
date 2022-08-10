@@ -40,13 +40,15 @@ const getTransactionStatus = async (
 
   const totalSpent = amount.plus(estimatedFees);
 
-  if (totalSpent.gt(account.spendableBalance)) {
-    errors.amount = new NotEnoughBalance();
-  }
+  // console.log("totalSpent", totalSpent);
 
-  if (!errors.amount && account.spendableBalance.lt(estimatedFees)) {
-    errors.amount = new NotEnoughBalance();
-  }
+  // if (totalSpent.gt(account.spendableBalance)) {
+  //   errors.amount = new NotEnoughBalance();
+  // }
+
+  // if (!errors.amount && account.spendableBalance.lt(estimatedFees)) {
+  //   errors.amount = new NotEnoughBalance();
+  // }
 
   if (!transaction.recipient) {
     errors.recipient = new RecipientRequired();
