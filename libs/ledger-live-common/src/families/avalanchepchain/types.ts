@@ -4,6 +4,8 @@ import type {
   AccountRaw,
   TransactionCommon,
   TransactionCommonRaw,
+  TransactionStatusCommon,
+  TransactionStatusCommonRaw
 } from "@ledgerhq/types-live";
 
 export type NetworkInfo = {
@@ -38,6 +40,10 @@ export type TransactionRaw = TransactionCommonRaw & {
   endTime: string | null;
   maxEndTime: string | null;
 };
+
+export type TransactionStatus = TransactionStatusCommon;
+
+export type TransactionStatusRaw = TransactionStatusCommonRaw;
 
 export type AvalanchePChainResources = {
   publicKey: string;

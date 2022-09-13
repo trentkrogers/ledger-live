@@ -1,4 +1,4 @@
-import type { Account } from "../../types";
+import type { Account } from "@ledgerhq/types-live";
 import BinTools from "avalanche/dist/utils/bintools";
 
 export const binTools = BinTools.getInstance();

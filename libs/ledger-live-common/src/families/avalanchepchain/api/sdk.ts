@@ -1,7 +1,7 @@
 import BigNumber from "bignumber.js";
 import { getEnv } from "../../../env";
 import network from "../../../network";
-import { Operation, OperationType } from "../../../types";
+import { Operation, OperationType } from "@ledgerhq/types-live";
 import { AvalanchePChainTransactions } from "../types";
 import { encodeOperationId } from "../../../operation";
 import { avalancheClient } from "./client";

@@ -41,6 +41,7 @@ export default {
   tezos,
   tron,
 };
+import { ExtraDeviceTransactionField as ExtraDeviceTransactionField_avalanchepchain } from  "../families/avalanchepchain/deviceTransactionConfig";
 import { ExtraDeviceTransactionField as ExtraDeviceTransactionField_cosmos } from  "../families/cosmos/deviceTransactionConfig";
 import { ExtraDeviceTransactionField as ExtraDeviceTransactionField_filecoin } from  "../families/filecoin/deviceTransactionConfig";
 import { ExtraDeviceTransactionField as ExtraDeviceTransactionField_osmosis } from  "../families/osmosis/deviceTransactionConfig";
@@ -50,6 +51,7 @@ import { ExtraDeviceTransactionField as ExtraDeviceTransactionField_tezos } from
 import { ExtraDeviceTransactionField as ExtraDeviceTransactionField_tron } from  "../families/tron/deviceTransactionConfig";
 
 export type ExtraDeviceTransactionField =
+  | ExtraDeviceTransactionField_avalanchepchain
   | ExtraDeviceTransactionField_cosmos
   | ExtraDeviceTransactionField_filecoin
   | ExtraDeviceTransactionField_osmosis

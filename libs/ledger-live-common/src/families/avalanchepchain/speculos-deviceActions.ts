@@ -3,7 +3,7 @@ import { deviceActionFlow } from "../../bot/specs";
 import type { Transaction } from "./types";
 import { BigNumber } from "bignumber.js";
 
-const acceptTransaction: DeviceAction<Transaction, any> = deviceActionFlow({
+export const acceptTransaction: DeviceAction<Transaction, any> = deviceActionFlow({
   steps: [
     {
       title: "Sign",
@@ -75,7 +75,3 @@ const acceptTransaction: DeviceAction<Transaction, any> = deviceActionFlow({
     },
   ],
 });
-
-export default {
-  acceptTransaction,
-};

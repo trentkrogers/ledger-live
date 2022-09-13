@@ -4,8 +4,12 @@ import { TransactionStatus as algorandTransactionStatus } from "../families/algo
 import { TransactionStatusRaw as algorandTransactionStatusRaw } from "../families/algorand/types";
 import { Transaction as avalanchecchainTransaction } from "../families/avalanchecchain/types";
 import { TransactionRaw as avalanchecchainTransactionRaw } from "../families/avalanchecchain/types";
+import { TransactionStatus as avalanchecchainTransactionStatus } from "../families/avalanchecchain/types";
+import { TransactionStatusRaw as avalanchecchainTransactionStatusRaw } from "../families/avalanchecchain/types";
 import { Transaction as avalanchepchainTransaction } from "../families/avalanchepchain/types";
 import { TransactionRaw as avalanchepchainTransactionRaw } from "../families/avalanchepchain/types";
+import { TransactionStatus as avalanchepchainTransactionStatus } from "../families/avalanchepchain/types";
+import { TransactionStatusRaw as avalanchepchainTransactionStatusRaw } from "../families/avalanchepchain/types";
 import { Transaction as bitcoinTransaction } from "../families/bitcoin/types";
 import { TransactionRaw as bitcoinTransactionRaw } from "../families/bitcoin/types";
 import { TransactionStatus as bitcoinTransactionStatus } from "../families/bitcoin/types";
@@ -127,6 +131,8 @@ export type TransactionRaw =
 
 export type TransactionStatus =
   | algorandTransactionStatus
+  | avalanchecchainTransactionStatus
+  | avalanchepchainTransactionStatus
   | bitcoinTransactionStatus
   | cardanoTransactionStatus
   | celoTransactionStatus
@@ -148,6 +154,8 @@ export type TransactionStatus =
 
 export type TransactionStatusRaw =
   | algorandTransactionStatusRaw
+  | avalanchecchainTransactionStatusRaw
+  | avalanchepchainTransactionStatusRaw
   | bitcoinTransactionStatusRaw
   | cardanoTransactionStatusRaw
   | celoTransactionStatusRaw

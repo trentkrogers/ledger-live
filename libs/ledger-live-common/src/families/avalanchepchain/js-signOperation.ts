@@ -2,11 +2,11 @@ import { Observable } from "rxjs";
 import { BigNumber } from "bignumber.js";
 import type { Transaction } from "./types";
 import type {
-  Operation,
   Account,
+  Operation,
   SignOperationEvent,
   OperationType,
-} from "../../types";
+} from "@ledgerhq/types-live";
 import { withDevice } from "../../hw/deviceAccess";
 import buildTransaction from "./js-buildTransaction";
 import Avalanche, { AVAX_BIP32_PREFIX } from "./hw-app-avalanche";
@@ -28,6 +28,7 @@ import BIPPath from "bip32-path";
 import { HDHelper } from "./hdhelper";
 import { createHash } from "crypto";
 import { AVAX_HRP } from "./utils";
+import { AvalanchePChainAccount } from "./types";
 
 const STAKEABLELOCKINID: number = 21;
 
@@ -46,8 +47,8 @@ const signOperation = ({
         let cancelled;
 
         async function main() {
-          const publicKey = account.avalanchePChainResources?.publicKey ?? "";
-          const chainCode = account.avalanchePChainResources?.chainCode ?? "";
+          const publicKey = (account as AvalanchePChainAccount).avalanchePChainResources?.publicKey ?? "";
+          const chainCode = (account as AvalanchePChainAccount).avalanchePChainResources?.chainCode ?? "";
 
           const hdHelper = await HDHelper.instantiate(publicKey, chainCode);
 
