@@ -103,3 +103,9 @@ export type AvalancheDelegationRaw = {
   };
   potentialReward: string;
 };
+
+export const AvalanchePChainTransactions = {
+  Import: "p_import",
+  Export: "p_export",
+  Delegate: "p_add_delegator"
+}
