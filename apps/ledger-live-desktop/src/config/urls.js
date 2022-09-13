@@ -293,7 +293,6 @@ export const urls = {
       "https://support.ledger.com/hc/en-us/articles/360020499920-Celo-CELO-?utm_source=ledger_live_desktop&utm_medium=self_referral&utm_content=celo",
   },
   avalanche: {
-    //TODO: update this link with correct article upon launch
     learnMore: "https://support.ledger.com/hc/en-us/articles/360020765779",
     learnMoreStakingParameters: "https://docs.avax.network/nodes/validate/staking#staking-parameters-on-avalanche",
     ledgerByFigmentTC: "https://cdn.figment.io/legal/Current%20Ledger_Online%20Staking%20Delgation%20Services%20Agreement.pdf"
