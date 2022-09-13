@@ -709,8 +709,6 @@ export function fromAccountRaw(rawAccount: AccountRaw): Account {
     spendableBalance,
     subAccounts: subAccountsRaw,
     swapHistory,
-    algorandResources,
-    avalanchePChainResources,
     syncHash,
     nfts,
   } = rawAccount;
