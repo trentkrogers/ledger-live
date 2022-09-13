@@ -22,14 +22,6 @@ const buildTransaction = async (
     ? new BN(account.spendableBalance.minus(transaction.fees || 0).toString())
     : new BN(amount.toString());
 
-  //for testing
-  //   const info = avalancheClient().Info();
-  //   const nodeId = await info.getNodeID();
-  //  const startTime: BN = UnixNow().add(new BN(FIVE_MINUTES));
-  //   const endTime: BN = startTime.add(new BN(1814400)); //TODO: get this from UI
-  //   console.log("UTXOs:", utxos);
-  //   console.log("ADDRESSES: ", utxos.getAllUTXOStrings());
-
   const pChain = avalancheClient().PChain();
 
   const unsignedTx = await pChain.buildAddDelegatorTx(
