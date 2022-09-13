@@ -19,7 +19,7 @@ import {
 } from "../families/algorand/serialization";
 import {
   toAvalanchePChainResourcesRaw,
-  fromAvalanchePChainResourcesRaw
+  fromAvalanchePChainResourcesRaw,
 } from "../families/avalanchepchain/serialization";
 import {
   toPolkadotResourcesRaw,
