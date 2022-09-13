@@ -13,9 +13,13 @@ export type NetworkInfoRaw = {
   family: "avalanchepchain";
 };
 
-export type AvalanchePChainAccount = Account & { avalanchePChainResources: AvalanchePChainResources };
+export type AvalanchePChainAccount = Account & {
+  avalanchePChainResources: AvalanchePChainResources;
+};
 
-export type AvalanchePChainAccountRaw = AccountRaw & { avalanchePChainResources: AvalanchePChainResourcesRaw };
+export type AvalanchePChainAccountRaw = AccountRaw & {
+  avalanchePChainResources: AvalanchePChainResourcesRaw;
+};
 
 export type Transaction = TransactionCommon & {
   family: "avalanchepchain";
