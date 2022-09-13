@@ -116,6 +116,7 @@ export const AvalancheValidatorAmountField = ({
           val={amount}
           fontSize={3}
           showCode
+          showAllDigits
         />
       </FieldText>
     </TransactionConfirmField>

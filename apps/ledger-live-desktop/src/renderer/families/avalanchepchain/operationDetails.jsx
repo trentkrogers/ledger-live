@@ -43,6 +43,7 @@ const OperationDetailsExtra = ({ extra, operation, type, account }: OperationDet
                   showCode
                   fontSize={4}
                   color="palette.text.shade60"
+                  showAllDigits
                 />
               </Box>
             </OpDetailsData>
