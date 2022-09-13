@@ -2,10 +2,6 @@ import { Transaction as algorandTransaction } from "../families/algorand/types";
 import { TransactionRaw as algorandTransactionRaw } from "../families/algorand/types";
 import { TransactionStatus as algorandTransactionStatus } from "../families/algorand/types";
 import { TransactionStatusRaw as algorandTransactionStatusRaw } from "../families/algorand/types";
-import { Transaction as avalanchecchainTransaction } from "../families/avalanchecchain/types";
-import { TransactionRaw as avalanchecchainTransactionRaw } from "../families/avalanchecchain/types";
-import { TransactionStatus as avalanchecchainTransactionStatus } from "../families/avalanchecchain/types";
-import { TransactionStatusRaw as avalanchecchainTransactionStatusRaw } from "../families/avalanchecchain/types";
 import { Transaction as avalanchepchainTransaction } from "../families/avalanchepchain/types";
 import { TransactionRaw as avalanchepchainTransactionRaw } from "../families/avalanchepchain/types";
 import { TransactionStatus as avalanchepchainTransactionStatus } from "../families/avalanchepchain/types";
@@ -85,7 +81,6 @@ import { TransactionStatusRaw as tronTransactionStatusRaw } from "../families/tr
 
 export type Transaction =
   | algorandTransaction
-  | avalanchecchainTransaction
   | avalanchepchainTransaction
   | bitcoinTransaction
   | cardanoTransaction
@@ -108,7 +103,6 @@ export type Transaction =
 
 export type TransactionRaw =
   | algorandTransactionRaw
-  | avalanchecchainTransactionRaw
   | avalanchepchainTransactionRaw
   | bitcoinTransactionRaw
   | cardanoTransactionRaw
@@ -131,7 +125,6 @@ export type TransactionRaw =
 
 export type TransactionStatus =
   | algorandTransactionStatus
-  | avalanchecchainTransactionStatus
   | avalanchepchainTransactionStatus
   | bitcoinTransactionStatus
   | cardanoTransactionStatus
@@ -154,7 +147,6 @@ export type TransactionStatus =
 
 export type TransactionStatusRaw =
   | algorandTransactionStatusRaw
-  | avalanchecchainTransactionStatusRaw
   | avalanchepchainTransactionStatusRaw
   | bitcoinTransactionStatusRaw
   | cardanoTransactionStatusRaw

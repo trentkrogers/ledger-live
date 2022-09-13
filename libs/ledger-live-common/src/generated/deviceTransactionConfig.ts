@@ -1,5 +1,4 @@
 import algorand from "../families/algorand/deviceTransactionConfig";
-import avalanchecchain from "../families/avalanchecchain/deviceTransactionConfig";
 import avalanchepchain from "../families/avalanchepchain/deviceTransactionConfig";
 import bitcoin from "../families/bitcoin/deviceTransactionConfig";
 import cardano from "../families/cardano/deviceTransactionConfig";
@@ -21,7 +20,6 @@ import tron from "../families/tron/deviceTransactionConfig";
 
 export default {
   algorand,
-  avalanchecchain,
   avalanchepchain,
   bitcoin,
   cardano,

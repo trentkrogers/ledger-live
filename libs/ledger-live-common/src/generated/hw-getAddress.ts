@@ -1,5 +1,4 @@
 import algorand from "../families/algorand/hw-getAddress";
-import avalanchecchain from "../families/avalanchecchain/hw-getAddress";
 import avalanchepchain from "../families/avalanchepchain/hw-getAddress";
 import bitcoin from "../families/bitcoin/hw-getAddress";
 import cardano from "../families/cardano/hw-getAddress";
@@ -22,7 +21,6 @@ import tron from "../families/tron/hw-getAddress";
 
 export default {
   algorand,
-  avalanchecchain,
   avalanchepchain,
   bitcoin,
   cardano,
