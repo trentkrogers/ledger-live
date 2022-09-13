@@ -1,8 +1,10 @@
 import type { BigNumber } from "bignumber.js";
 import type {
+  Account,
+  AccountRaw,
   TransactionCommon,
   TransactionCommonRaw,
-} from "../../types/transaction";
+} from "@ledgerhq/types-live";
 
 export type NetworkInfo = {
   family: "avalanchepchain";
@@ -10,6 +12,11 @@ export type NetworkInfo = {
 export type NetworkInfoRaw = {
   family: "avalanchepchain";
 };
+
+export type AvalanchePChainAccount = Account & { avalanchePChainResources: AvalanchePChainResources };
+
+export type AvalanchePChainAccountRaw = AccountRaw & { avalanchePChainResources: AvalanchePChainResourcesRaw };
+
 export type Transaction = TransactionCommon & {
   family: "avalanchepchain";
   fees: BigNumber | null;
