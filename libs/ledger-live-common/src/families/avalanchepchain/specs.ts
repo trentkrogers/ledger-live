@@ -73,7 +73,7 @@ const avalanche: AppSpec<Transaction> = {
           account as AvalanchePChainAccount;
         const {
           avalanchePChainResources: avalanchePChainResourcesBeforeTransaction,
-        } = accountBeforeTransaction;
+        } = accountBeforeTransaction as AvalanchePChainAccount;
         invariant(avalanchePChainResources, "avalanchepchain");
 
         expect(
