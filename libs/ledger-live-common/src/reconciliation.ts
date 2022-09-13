@@ -27,6 +27,7 @@ import {
   fromCryptoOrgResourcesRaw,
   fromSolanaResourcesRaw,
   fromCeloResourcesRaw,
+  fromAvalanchePChainResourcesRaw,
   fromNFTRaw,
   toTronResourcesRaw,
   toCosmosResourcesRaw,
@@ -512,6 +513,17 @@ export function patchAccount(
       }
       break;
     }
+  }
+
+  if (
+    updatedRaw.avalanchePChainResources &&
+    // @ts-expect-error
+    account.avalanchePChainResources !== updatedRaw.avalanchePChainResources
+  ) {
+    next.avalanchePChainResources = fromAvalanchePChainResourcesRaw(
+      updatedRaw.avalanchePChainResources
+    );
+    changed = true;
   }
 
   const nfts = updatedRaw?.nfts?.map(fromNFTRaw);
