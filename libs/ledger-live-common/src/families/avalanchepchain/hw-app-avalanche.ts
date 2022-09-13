@@ -3,6 +3,7 @@ import BIPPath from "bip32-path";
 import bech32 from "bech32";
 import secp256k1 from "secp256k1";
 import { createHash } from "crypto";
+import { AVAX_HRP } from "./utils";
 
 const CLA = 0x80;
 const INS = {
@@ -96,7 +97,7 @@ export default class Avalanche {
       p2,
       buffer
     );
-    const address = bech32.encode("avax", bech32.toWords(result.slice(0, -2)));
+    const address = bech32.encode(AVAX_HRP, bech32.toWords(result.slice(0, -2)));
 
     const { publicKey, chainCode } = await this.getPublicKey(display);
 
