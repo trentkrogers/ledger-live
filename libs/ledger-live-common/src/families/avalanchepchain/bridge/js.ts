@@ -20,6 +20,7 @@ const currencyBridge: CurrencyBridge = {
     hydrate,
     scanAccounts,
 };
+
 const accountBridge: AccountBridge<Transaction> = {
     estimateMaxSpendable,
     createTransaction,

@@ -55,6 +55,10 @@ import { SolanaAccount, SolanaAccountRaw } from "./families/solana/types";
 import { TezosAccount, TezosAccountRaw } from "./families/tezos/types";
 import { TronAccount, TronAccountRaw } from "./families/tron/types";
 import { CeloAccount, CeloAccountRaw } from "./families/celo/types";
+import {
+  AvalanchePChainAccount,
+  AvalanchePChainAccountRaw,
+} from "./families/avalanchepchain/types";
 
 // aim to build operations with the minimal diff & call to coin implementation possible
 export async function minimalOperationsBuilder<CO>(
@@ -513,17 +517,26 @@ export function patchAccount(
       }
       break;
     }
-  }
+    case "avalanchepchain": {
+      const avalanchePChainAccount = account as AvalanchePChainAccount;
+      const avalanchePChainUpdatedRaw = updatedRaw as AvalanchePChainAccountRaw;
 
-  if (
-    updatedRaw.avalanchePChainResources &&
-    // @ts-expect-error
-    account.avalanchePChainResources !== updatedRaw.avalanchePChainResources
-  ) {
-    next.avalanchePChainResources = fromAvalanchePChainResourcesRaw(
-      updatedRaw.avalanchePChainResources
-    );
-    changed = true;
+      if (
+        avalanchePChainUpdatedRaw.avalanchePChainResources &&
+        (!avalanchePChainAccount.avalanchePChainResources ||
+          !areSameResources(
+            toCeloResourcesRaw(avalanchePChainAccount.avalanchePChainResources),
+            avalanchePChainUpdatedRaw.avalanchePChainResources
+          ))
+      ) {
+        (next as AvalanchePChainAccount).avalanchePChainResources =
+          fromAvalanchePChainResourcesRaw(
+            avalanchePChainUpdatedRaw.avalanchePChainResources
+          );
+        changed = true;
+      }
+      break;
+    }
   }
 
   const nfts = updatedRaw?.nfts?.map(fromNFTRaw);
