@@ -39,6 +39,7 @@ import {
   toCryptoOrgResourcesRaw,
   toSolanaResourcesRaw,
   toCeloResourcesRaw,
+  toAvalanchePChainResourcesRaw,
 } from "./account";
 import consoleWarnExpectToEqual from "./consoleWarnExpectToEqual";
 import { AlgorandAccount, AlgorandAccountRaw } from "./families/algorand/types";
@@ -525,7 +526,7 @@ export function patchAccount(
         avalanchePChainUpdatedRaw.avalanchePChainResources &&
         (!avalanchePChainAccount.avalanchePChainResources ||
           !areSameResources(
-            toCeloResourcesRaw(avalanchePChainAccount.avalanchePChainResources),
+            toAvalanchePChainResourcesRaw(avalanchePChainAccount.avalanchePChainResources),
             avalanchePChainUpdatedRaw.avalanchePChainResources
           ))
       ) {
