@@ -76,7 +76,6 @@ export function StepDelegationFooter({
 
   return (
     <>
-      <AccountFooter parentAccount={parentAccount} account={account} status={status} />
       {displayTC && <LedgerByFigmentTC />}
       <Box horizontal>
         <Button mr={1} secondary onClick={onClose}>
