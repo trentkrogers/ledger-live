@@ -21,9 +21,7 @@ type OperationDetailsExtraProps = {
 const OperationDetailsExtra = ({ extra, operation, type, account }: OperationDetailsExtraProps) => {
   const { stakeValue, validator } = extra;
   const { avalanchePChainResources } = account;
-  const { delegations } = avalanchePChainResources;
-  const delegation = delegations.find(d => d.txID === operation.hash);
-  const validatorNode = validator || delegation?.nodeID;
+  const validatorNode = validator || operation.recipients
 
   switch (type) {
     case "DELEGATE":
@@ -53,7 +51,7 @@ const OperationDetailsExtra = ({ extra, operation, type, account }: OperationDet
               </OpDetailsTitle>
               <OpDetailsData>
                 <Box>
-                  <Text ff="Inter|SemiBold">{validatorNode}</Text>
+                  <Text ff="Inter|Regular">{validatorNode}</Text>
                 </Box>
               </OpDetailsData>
             </OpDetailsSection>
