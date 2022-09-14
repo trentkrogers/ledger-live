@@ -74,7 +74,7 @@ const convertTransactionToOperation = (transaction, accountId): Operation => {
       return convertDelegationToOperation(transaction, accountId, type);
     }
     default: {
-      return convertSendAndReceiveToOperation(transaction, accountId, type);
+      return convertExportAndImportToOperation(transaction, accountId, type);
     }
   }
 };
@@ -104,7 +104,7 @@ const convertDelegationToOperation = (
   };
 };
 
-const convertSendAndReceiveToOperation = (
+const convertExportAndImportToOperation = (
   transaction,
   accountId,
   type
