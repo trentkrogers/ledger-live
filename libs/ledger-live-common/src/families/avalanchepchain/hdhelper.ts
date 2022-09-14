@@ -18,7 +18,7 @@ const INDEX_RANGE = 20;
 const SCAN_SIZE = 100;
 const SCAN_RANGE = SCAN_SIZE - INDEX_RANGE;
 
-//Liberally inspired by the HdHelper from avalanche-wallet
+//Liberally inspired by the HdHelper from https://github.com/ava-labs/avalanche-wallet
 class HDHelper {
   private static instance: HDHelper;
 
