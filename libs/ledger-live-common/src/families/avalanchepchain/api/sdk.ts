@@ -113,7 +113,8 @@ const convertExportAndImportToOperation = (
   const outputIndex =
     transaction.type === AvalanchePChainTransactions.Import ? 0 : 1;
   let value = new BigNumber(
-    transaction.outputs?.find((o) => o.index === outputIndex).amount
+    transaction.outputs?.find((o) => o.index === outputIndex)?.amount ??
+      transaction.outputs?.find((o) => o.index === 0).amount
   );
 
   if (transaction.type === AvalanchePChainTransactions.Export) {
