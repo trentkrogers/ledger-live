@@ -1,6 +1,5 @@
 import invariant from "invariant";
 import flatMap from "lodash/flatMap";
-
 import { Transaction } from "./types";
 import type { AccountLike } from "@ledgerhq/types-live";
 
@@ -28,7 +27,7 @@ function inferTransactions(
     return {
       ...transaction,
       family: "avalanchepchain",
-      mode: opts.mode || "stake",
+      mode: opts.mode || "delegate",
     } as Transaction;
   });
 }
