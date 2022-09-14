@@ -1,8 +1,6 @@
 import { BigNumber } from "bignumber.js";
-
 import type { AccountLike, Account } from "@ledgerhq/types-live";
 import { getMainAccount } from "../../account";
-
 import type { Transaction } from "./types";
 
 /**
@@ -20,7 +18,7 @@ const estimateMaxSpendable = async ({
   transaction?: Transaction;
 }): Promise<BigNumber> => {
   const a = getMainAccount(account, parentAccount);
-  return await a.spendableBalance;
+  return a.spendableBalance;
 };
 
 export default estimateMaxSpendable;
