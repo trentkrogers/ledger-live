@@ -1,8 +1,6 @@
 // @flow
 import React from "react";
-
 import type { Operation, Account } from "@ledgerhq/live-common/types";
-
 import {
   OpDetailsTitle,
   OpDetailsSection,
