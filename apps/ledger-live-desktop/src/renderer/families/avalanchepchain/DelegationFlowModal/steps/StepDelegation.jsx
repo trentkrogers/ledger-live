@@ -11,7 +11,6 @@ import Button from "~/renderer/components/Button";
 import type { AccountBridge, Transaction } from "@ledgerhq/live-common/types";
 import ValidatorField from "../fields/ValidatorField";
 import ErrorBanner from "~/renderer/components/ErrorBanner";
-import AccountFooter from "~/renderer/modals/Send/AccountFooter";
 import LedgerByFigmentTC from "../components/LedgerByFigmentTCLink";
 import { isDefaultValidatorNode } from "@ledgerhq/live-common/families/avalanchepchain/utils";
 
@@ -63,9 +62,7 @@ export default function StepDelegation({
 export function StepDelegationFooter({
   transitionTo,
   account,
-  parentAccount,
   onClose,
-  status,
   bridgePending,
   transaction,
 }: StepProps) {
