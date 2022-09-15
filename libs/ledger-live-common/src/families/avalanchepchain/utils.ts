@@ -3,14 +3,13 @@ import BinTools from "avalanche/dist/utils/bintools";
 
 export const binTools = BinTools.getInstance();
 
-export const AVAX_HRP = "avax"; //"fuji" for testnet, "avax" for mainnet
+export const AVAX_HRP = "avax";
 
 export const FIGMENT_AVALANCHE_VALIDATOR_NODES = [
   "NodeID-GW7CvXwkPFDsfFHrix1SA148NHF5ZnSXs",
 ];
 
 export const ONE_AVAX = 1000000000;
-// export const AVAX_MINIMUM_STAKE_AMOUNT = 1000000000; //fuji testnet
 export const AVAX_MINIMUM_STAKE_AMOUNT = 25000000000; //mainnet
 
 export const isDefaultValidatorNode = (nodeID: string): boolean =>
