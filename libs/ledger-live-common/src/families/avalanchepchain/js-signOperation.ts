@@ -209,6 +209,7 @@ const getTransactionPathsAndAddresses = (unsignedTx, chainId, pAddresses) => {
   // Try to get operations, it will fail if there are none, ignore and continue
   try {
     operations = (tx as OperationTx).getOperations();
+    // eslint-disable-next-line no-empty
   } catch (e) {}
 
   const hrp = AVAX_HRP;
@@ -269,6 +270,7 @@ const getCredentials = <UnsignedTx extends AVMUnsignedTx | PlatformUnsignedTx>(
   // Try to get operations, it will fail if there are none, ignore and continue
   try {
     operations = (tx as OperationTx).getOperations();
+    // eslint-disable-next-line no-empty
   } catch (e) {}
 
   const CredentialClass = PlatformSelectCredentialClass;
