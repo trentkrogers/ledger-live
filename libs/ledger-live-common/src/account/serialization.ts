@@ -101,7 +101,10 @@ import {
 import { SolanaAccount, SolanaAccountRaw } from "../families/solana/types";
 import { TezosAccount, TezosAccountRaw } from "../families/tezos/types";
 import { CeloAccount, CeloAccountRaw } from "../families/celo/types";
-import { AvalanchePChainAccount, AvalanchePChainAccountRaw } from "../families/avalanchepchain/types";
+import {
+  AvalanchePChainAccount,
+  AvalanchePChainAccountRaw,
+} from "../families/avalanchepchain/types";
 
 export { toCosmosResourcesRaw, fromCosmosResourcesRaw };
 export { toAlgorandResourcesRaw, fromAlgorandResourcesRaw };
@@ -876,7 +879,9 @@ export function fromAccountRaw(rawAccount: AccountRaw): Account {
       break;
     }
     case "avalanchepchain": {
-      const avalanchePChainResourcesRaw = (rawAccount as AvalanchePChainAccountRaw).avalanchePChainResources;
+      const avalanchePChainResourcesRaw = (
+        rawAccount as AvalanchePChainAccountRaw
+      ).avalanchePChainResources;
       if (avalanchePChainResourcesRaw)
         (res as AvalanchePChainAccount).avalanchePChainResources =
           fromAvalanchePChainResourcesRaw(avalanchePChainResourcesRaw);
@@ -1072,9 +1077,10 @@ export function toAccountRaw(account: Account): AccountRaw {
     case "avalanchepchain": {
       const avalanchePChainAccount = account as AvalanchePChainAccount;
       if (avalanchePChainAccount.avalanchePChainResources)
-        (res as AvalanchePChainAccountRaw).avalanchePChainResources = toAvalanchePChainResourcesRaw(
-          avalanchePChainAccount.avalanchePChainResources
-        );
+        (res as AvalanchePChainAccountRaw).avalanchePChainResources =
+          toAvalanchePChainResourcesRaw(
+            avalanchePChainAccount.avalanchePChainResources
+          );
       break;
     }
   }
