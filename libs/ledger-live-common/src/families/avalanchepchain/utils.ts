@@ -10,7 +10,7 @@ export const FIGMENT_AVALANCHE_VALIDATOR_NODES = [
 ];
 
 export const ONE_AVAX = 1000000000;
-export const AVAX_MINIMUM_STAKE_AMOUNT = 25000000000; //mainnet
+export const AVAX_MINIMUM_STAKE_AMOUNT = 25000000000;
 
 export const isDefaultValidatorNode = (nodeID: string): boolean =>
   FIGMENT_AVALANCHE_VALIDATOR_NODES.includes(nodeID);
