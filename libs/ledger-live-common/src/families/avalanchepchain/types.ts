@@ -5,7 +5,7 @@ import type {
   TransactionCommon,
   TransactionCommonRaw,
   TransactionStatusCommon,
-  TransactionStatusCommonRaw
+  TransactionStatusCommonRaw,
 } from "@ledgerhq/types-live";
 
 export type NetworkInfo = {
@@ -113,5 +113,5 @@ export type AvalancheDelegationRaw = {
 export const AvalanchePChainTransactions = {
   Import: "p_import",
   Export: "p_export",
-  Delegate: "p_add_delegator"
-}
+  Delegate: "p_add_delegator",
+};

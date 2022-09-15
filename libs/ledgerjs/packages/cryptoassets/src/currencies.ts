@@ -310,8 +310,8 @@ export const cryptocurrenciesById: Record<string, CryptoCurrency> = {
       {
         tx: "https://explorer-xp.avax.network/tx/$hash",
         address: "https://subnets.avax.network/validators/$address",
-      }
-    ]
+      },
+    ],
   },
   banano: {
     type: "CryptoCurrency",

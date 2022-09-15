@@ -526,7 +526,9 @@ export function patchAccount(
         avalanchePChainUpdatedRaw.avalanchePChainResources &&
         (!avalanchePChainAccount.avalanchePChainResources ||
           !areSameResources(
-            toAvalanchePChainResourcesRaw(avalanchePChainAccount.avalanchePChainResources),
+            toAvalanchePChainResourcesRaw(
+              avalanchePChainAccount.avalanchePChainResources
+            ),
             avalanchePChainUpdatedRaw.avalanchePChainResources
           ))
       ) {

@@ -22,7 +22,7 @@ export const getOperations = async (
   const hdHelper = HDHelper.getInstance();
   const addresses = hdHelper.getAllDerivedAddresses();
 
-  let operations: Operation[] = await fetchOperations(
+  const operations: Operation[] = await fetchOperations(
     addresses,
     blockStartHeight
   );
@@ -44,7 +44,7 @@ const fetchOperations = async (addresses: string[], startHeight: number) => {
 
   const rawAddresses = selection.map(removeChainPrefix).join(",");
 
-  let { data } = await network({
+  const { data } = await network({
     method: "GET",
     url: getIndexerUrl(
       `/transactions?address=${rawAddresses}&start_height=${startHeight}&limit=100`
@@ -84,7 +84,7 @@ const convertDelegationToOperation = (
   accountId,
   type
 ): Operation => {
-  let stakeValue = new BigNumber(transaction.metadata.weight);
+  const stakeValue = new BigNumber(transaction.metadata.weight);
 
   return {
     id: encodeOperationId(accountId, transaction.id, type),
@@ -171,11 +171,11 @@ export const getAccount = async () => {
 };
 
 export const getDelegations = async () => {
-  let allDelegators: any = [];
+  const allDelegators: any = [];
   const validators = await getValidators();
 
   for (let i = 0; i < validators.length; i++) {
-    let validator = validators[i];
+    const validator = validators[i];
     if (validator.delegators == null) continue;
     allDelegators.push(...validator.delegators);
   }
@@ -188,9 +188,9 @@ const getUserDelegations = (delegators) => {
 
   const userAddresses = hdHelper.getAllDerivedAddresses();
 
-  let userDelegations = delegators.filter((d) => {
-    let rewardAddresses = d.rewardOwner.addresses;
-    let filteredByUser = rewardAddresses.filter((address) => {
+  const userDelegations = delegators.filter((d) => {
+    const rewardAddresses = d.rewardOwner.addresses;
+    const filteredByUser = rewardAddresses.filter((address) => {
       return userAddresses.includes(address);
     });
 
@@ -198,8 +198,8 @@ const getUserDelegations = (delegators) => {
   });
 
   userDelegations.sort((a, b) => {
-    let startA = parseInt(a.startTime);
-    let startB = parseInt(b.startTime);
+    const startA = parseInt(a.startTime);
+    const startB = parseInt(b.startTime);
     return startA - startB;
   });
 
@@ -281,8 +281,8 @@ const customValidatorOrder = (validators) => {
 };
 
 const orderByStakeAmount = () => (a, b) => {
-  let aStake = new BigNumber(a.stakeAmount);
-  let bStake = new BigNumber(b.stakeAmount);
+  const aStake = new BigNumber(a.stakeAmount);
+  const bStake = new BigNumber(b.stakeAmount);
 
   if (aStake.gt(bStake)) {
     return -1;
@@ -321,7 +321,7 @@ const removeValidatorsWithoutAvailableStake = (minimumStake) => (validator) => {
 export const getAddressChains = async (addresses: string[]) => {
   const rawAddresses = addresses.map(removeChainPrefix);
 
-  let { data } = await network({
+  const { data } = await network({
     method: "POST",
     data: {
       address: rawAddresses,

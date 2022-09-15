@@ -108,7 +108,7 @@ class HDHelper {
     return this.getAddressForIndex(index);
   }
 
-  async findAvailableIndexExplorer(start: number = 0): Promise<number> {
+  async findAvailableIndexExplorer(start = 0): Promise<number> {
     const upTo = 512;
     const addresses: string[] = this.getAllDerivedAddresses(
       start + upTo,
@@ -116,10 +116,10 @@ class HDHelper {
     );
     const addressChains = await getAddressChains(addresses);
 
-    let chainID = avalancheClient().PChain().getBlockchainID();
+    const chainID = avalancheClient().PChain().getBlockchainID();
 
     for (let i = 0; i < addresses.length - INDEX_RANGE; i++) {
-      let gapSize: number = 0;
+      let gapSize = 0;
 
       for (let n = 0; n < INDEX_RANGE; n++) {
         const scanIndex = i + n;
@@ -169,7 +169,7 @@ class HDHelper {
       return this.addressCache[index];
     }
 
-    const derivationPath: string = `${this.changePath}/${index.toString()}`;
+    const derivationPath = `${this.changePath}/${index.toString()}`;
 
     let key: HDKey;
     if (this.hdCache[index]) {

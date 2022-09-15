@@ -11,11 +11,9 @@ import type { Transaction } from "./types";
 const estimateMaxSpendable = async ({
   account,
   parentAccount,
-  transaction,
 }: {
   account: AccountLike;
   parentAccount?: Account;
-  transaction?: Transaction;
 }): Promise<BigNumber> => {
   const a = getMainAccount(account, parentAccount);
   return a.spendableBalance;

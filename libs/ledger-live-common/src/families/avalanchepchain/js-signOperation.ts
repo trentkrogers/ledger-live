@@ -30,7 +30,7 @@ import { createHash } from "crypto";
 import { AVAX_HRP } from "./utils";
 import { AvalanchePChainAccount } from "./types";
 
-const STAKEABLELOCKINID: number = 21;
+const STAKEABLELOCKINID = 21;
 
 const signOperation = ({
   account,
@@ -47,8 +47,12 @@ const signOperation = ({
         let cancelled;
 
         async function main() {
-          const publicKey = (account as AvalanchePChainAccount).avalanchePChainResources?.publicKey ?? "";
-          const chainCode = (account as AvalanchePChainAccount).avalanchePChainResources?.chainCode ?? "";
+          const publicKey =
+            (account as AvalanchePChainAccount).avalanchePChainResources
+              ?.publicKey ?? "";
+          const chainCode =
+            (account as AvalanchePChainAccount).avalanchePChainResources
+              ?.chainCode ?? "";
 
           const hdHelper = await HDHelper.instantiate(publicKey, chainCode);
 
@@ -59,7 +63,7 @@ const signOperation = ({
           );
           const chainId = "P";
           const extendedPAddresses = hdHelper.getExtendedAddresses();
-          const { paths, addresses } = getTransactionPathsAndAddresses(
+          const { paths } = getTransactionPathsAndAddresses(
             unsignedTx,
             chainId,
             extendedPAddresses
@@ -67,7 +71,7 @@ const signOperation = ({
 
           const avalanche: Avalanche = new Avalanche(transport);
           const config = await avalanche.getLedgerAppConfiguration();
-          let canLedgerParse = getCanLedgerParse(config, unsignedTx);
+          const canLedgerParse = getCanLedgerParse(config, unsignedTx);
 
           o.next({ type: "device-signature-requested" });
 
@@ -77,12 +81,12 @@ const signOperation = ({
             signedTx = await signTransactionParsable<
               PlatformUnsignedTx,
               PlatformTx
-            >(unsignedTx, paths, chainId, avalanche);
+            >(unsignedTx, paths, avalanche);
           } else {
             signedTx = await signTransactionHash<
               PlatformUnsignedTx,
               PlatformTx
-            >(unsignedTx, paths, chainId, avalanche);
+            >(unsignedTx, paths, avalanche);
           }
 
           if (cancelled) return;
@@ -120,7 +124,6 @@ const signTransactionParsable = async <
 >(
   unsignedTx: UnsignedTx,
   paths: string[],
-  chainId: string,
   avalanche
 ): Promise<SignedTx> => {
   const accountPath = BIPPath.fromString(AVAX_BIP32_PREFIX);
@@ -136,12 +139,7 @@ const signTransactionParsable = async <
   );
 
   const sigMap = ledgerSignedTx.signatures;
-  const credentials = getCredentials<UnsignedTx>(
-    unsignedTx,
-    paths,
-    sigMap,
-    chainId
-  );
+  const credentials = getCredentials<UnsignedTx>(unsignedTx, paths, sigMap);
   const signedTx = new PlatformTx(
     unsignedTx as PlatformUnsignedTx,
     credentials
@@ -156,7 +154,6 @@ const signTransactionHash = async <
 >(
   unsignedTx: UnsignedTx,
   paths: string[],
-  chainId: string,
   avalanche
 ): Promise<SignedTx> => {
   const txbuff = unsignedTx.toBuffer();
@@ -167,8 +164,7 @@ const signTransactionHash = async <
   const creds: Credential[] = getCredentials<UnsignedTx>(
     unsignedTx,
     paths,
-    sigMap,
-    chainId
+    sigMap
   );
   const signedTx = new PlatformTx(unsignedTx as PlatformUnsignedTx, creds);
 
@@ -181,7 +177,7 @@ const getCanLedgerParse = (config, unsignedTx) => {
   const txIns = unsignedTx.getTransaction().getIns();
 
   for (let i = 0; i < txIns.length; i++) {
-    let typeID = txIns[i].getInput().getTypeID();
+    const typeID = txIns[i].getInput().getTypeID();
     if (typeID === STAKEABLELOCKINID) {
       canLedgerParse = false;
       break;
@@ -213,9 +209,7 @@ const getTransactionPathsAndAddresses = (unsignedTx, chainId, pAddresses) => {
   // Try to get operations, it will fail if there are none, ignore and continue
   try {
     operations = (tx as OperationTx).getOperations();
-  } catch (e) {
-    console.log(e);
-  }
+  } catch (e) {}
 
   const hrp = AVAX_HRP;
   const paths: string[] = [];
@@ -263,8 +257,7 @@ const getTransactionPathsAndAddresses = (unsignedTx, chainId, pAddresses) => {
 const getCredentials = <UnsignedTx extends AVMUnsignedTx | PlatformUnsignedTx>(
   unsignedTx: UnsignedTx,
   paths: string[],
-  sigMap: any,
-  chainId: string
+  sigMap: any
 ): Credential[] => {
   const creds: Credential[] = [];
   const tx = unsignedTx.getTransaction();
@@ -276,9 +269,7 @@ const getCredentials = <UnsignedTx extends AVMUnsignedTx | PlatformUnsignedTx>(
   // Try to get operations, it will fail if there are none, ignore and continue
   try {
     operations = (tx as OperationTx).getOperations();
-  } catch (e) {
-    console.log(e);
-  }
+  } catch (e) {}
 
   const CredentialClass = PlatformSelectCredentialClass;
 
